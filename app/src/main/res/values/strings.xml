@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Slovíčka</string>
+    <string-array name="words">
+        <item>KOČKA</item>
+        <item>OLIVER</item>
+        <item>ŽIRAFA</item>
+        <item>KRTEK</item>
+    </string-array>
+</resources>
