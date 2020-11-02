@@ -1,9 +1,29 @@
 <resources>
     <string name="app_name">Slovíčka</string>
     <string-array name="words">
+        <item>AUTO</item>
+        <item>DŮM</item>
+        <item>HAD</item>
         <item>KOČKA</item>
-        <item>OLIVER</item>
-        <item>ŽIRAFA</item>
         <item>KRTEK</item>
+        <item>LEV</item>
+        <item>OLIVER</item>
+        <item>MÁMA</item>
+        <item>MASO</item>
+        <item>MOST</item>
+        <item>NOS</item>
+        <item>OKO</item>
+        <item>PES</item>
+        <item>PRASE</item>
+        <item>PÚ</item>
+        <item>SOVA</item>
+        <item>SŮL</item>
+        <item>SÝR</item>
+        <item>TÁTA</item>
+        <item>ŽIRAFA</item>
+        <item>máma</item>
+        <item>oko</item>
+        <item>Oliver</item>
+        <item>Pú</item>
     </string-array>
 </resources>
