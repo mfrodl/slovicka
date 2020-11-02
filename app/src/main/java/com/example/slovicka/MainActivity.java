@@ -1,6 +1,8 @@
 package com.example.slovicka;
 
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -10,7 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.slovicka.ui.main.SectionsPagerAdapter;
 
+import org.w3c.dom.Text;
+
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
+
+    TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +27,18 @@ public class MainActivity extends AppCompatActivity {
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
-        //TabLayout tabs = findViewById(R.id.tabs);
-        //tabs.setupWithViewPager(viewPager);
-        //FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
 
-        //fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-        //        .setAction("Action", null).show());
+        fab.setOnClickListener(view -> {
+            String[] words = getResources().getStringArray(R.array.words);
+            int index = viewPager.getCurrentItem();
+            textToSpeech.speak(words[index], TextToSpeech.QUEUE_FLUSH, null, null);
+        });
 
+        textToSpeech = new TextToSpeech(getApplicationContext(), status -> {
+            if (status != TextToSpeech.ERROR) {
+                textToSpeech.setLanguage(new Locale("cs", "CZ"));
+            }
+        });
     }
 }
