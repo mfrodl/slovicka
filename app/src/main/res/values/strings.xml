@@ -7,12 +7,16 @@
         <item>KOČKA</item>
         <item>KRTEK</item>
         <item>LEV</item>
-        <item>OLIVER</item>
+        <item>LIST</item>
         <item>MÁMA</item>
         <item>MASO</item>
+        <item>MÉĎA</item>
+        <item>MOBIL</item>
         <item>MOST</item>
+        <item>MYŠ</item>
         <item>NOS</item>
         <item>OKO</item>
+        <item>OLIVER</item>
         <item>PES</item>
         <item>PRASE</item>
         <item>PÚ</item>
@@ -20,10 +24,16 @@
         <item>SŮL</item>
         <item>SÝR</item>
         <item>TÁTA</item>
+        <item>VODA</item>
+        <item>ŽÁBA</item>
         <item>ŽIRAFA</item>
+        <item>auto</item>
         <item>máma</item>
+        <item>nos</item>
         <item>oko</item>
+        <item>pes</item>
         <item>Oliver</item>
         <item>Pú</item>
+        <item>táta</item>
     </string-array>
 </resources>
