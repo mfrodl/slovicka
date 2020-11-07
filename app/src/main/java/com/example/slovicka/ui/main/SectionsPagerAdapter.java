@@ -6,6 +6,9 @@ import com.example.slovicka.R;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -16,23 +19,26 @@ import androidx.fragment.app.FragmentPagerAdapter;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    private final Context mContext;
+    private final String[] words;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
-        this.mContext = context;
+        this.words = context.getResources().getStringArray(R.array.words);
+        Collections.shuffle(Arrays.asList(words));
     }
 
     @NotNull
     @Override
-    public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position);
+    public Fragment getItem(int index) {
+        return PlaceholderFragment.newInstance(words[index]);
     }
 
     @Override
     public int getCount() {
-        return mContext.getResources().getStringArray(R.array.words).length;
+        return words.length;
+    }
+
+    public String getWord(int index) {
+        return words[index];
     }
 }

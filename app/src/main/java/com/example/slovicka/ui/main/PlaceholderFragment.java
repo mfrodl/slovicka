@@ -19,15 +19,13 @@ import androidx.lifecycle.ViewModelProvider;
  */
 public class PlaceholderFragment extends Fragment {
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
     private PageViewModel pageViewModel;
 
     @NotNull
-    public static PlaceholderFragment newInstance(int index) {
+    public static PlaceholderFragment newInstance(String word) {
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(ARG_SECTION_NUMBER, index);
+        bundle.putString("word", word);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -36,12 +34,7 @@ public class PlaceholderFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pageViewModel = new ViewModelProvider(this).get(PageViewModel.class);
-        int index = 1;
-        if (getArguments() != null) {
-            index = getArguments().getInt(ARG_SECTION_NUMBER);
-        }
-        String[] words = getResources().getStringArray(R.array.words);
-        pageViewModel.setText(words[index]);
+        pageViewModel.setText(getWord());
     }
 
     @Override
@@ -52,5 +45,9 @@ public class PlaceholderFragment extends Fragment {
         final TextView textView = root.findViewById(R.id.section_label);
         pageViewModel.getText().observe(this, textView::setText);
         return root;
+    }
+
+    private String getWord() {
+        return getArguments().getString("word");
     }
 }

@@ -7,7 +7,6 @@ import android.text.style.ForegroundColorSpan;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -17,18 +16,16 @@ public class PageViewModel extends ViewModel {
 
     private MutableLiveData<SpannableString> mText = new MutableLiveData<>();
 
-    public void setText(String text)
-    {
+    public void setText(String text) {
         SpannableString spannableString = new SpannableString(text);
-        Random randomGenerator = new Random();
 
         Integer[] colors = {
-                Color.RED,
-                Color.GREEN,
-                Color.BLUE,
-                Color.CYAN,
-                Color.MAGENTA,
-                Color.BLACK
+                Color.rgb(0, 0, 0),
+                Color.rgb(255, 0, 0),
+                Color.rgb(0, 127, 0),
+                Color.rgb(0, 0, 255),
+                Color.rgb(255, 0, 255),
+                Color.rgb(127, 0, 191),
         };
 
         Collections.shuffle(Arrays.asList(colors));
