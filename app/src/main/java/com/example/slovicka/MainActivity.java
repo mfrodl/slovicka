@@ -54,4 +54,12 @@ public class MainActivity extends AppCompatActivity {
             textToSpeech.speak(word, TextToSpeech.QUEUE_ADD, null, word);
         });
     }
+
+    public TextToSpeech getTextToSpeech() {
+        return textToSpeech;
+    }
+
+    public int getDrawableId(String name) {
+        return getResources().getIdentifier(name, "drawable", getPackageName());
+    }
 }

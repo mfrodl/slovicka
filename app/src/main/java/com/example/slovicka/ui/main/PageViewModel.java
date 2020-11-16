@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModel;
 
 public class PageViewModel extends ViewModel {
 
-    private MutableLiveData<SpannableString> mText = new MutableLiveData<>();
+    private MutableLiveData<SpannableString> text = new MutableLiveData<>();
 
     public void setText(String text) {
         SpannableString spannableString = new SpannableString(text);
@@ -35,10 +35,10 @@ public class PageViewModel extends ViewModel {
             spannableString.setSpan(new ForegroundColorSpan(color), i,i + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
-        mText.setValue(spannableString);
+        this.text.setValue(spannableString);
     }
 
     public LiveData<SpannableString> getText() {
-        return mText;
+        return text;
     }
 }
